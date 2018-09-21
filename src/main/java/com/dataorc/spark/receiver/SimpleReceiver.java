@@ -41,7 +41,8 @@ public class SimpleReceiver {
         Content r = null;
         try {
             r = Request.Post(uri).
-                    execute().returnContent(); JsonParser jsonParser = new JsonParser() ;
+                    execute().returnContent();
+            JsonParser jsonParser = new JsonParser() ;
             JsonElement jsonElement = jsonParser.parse(r.asString());
             JsonArray jsonarray = jsonElement.getAsJsonArray() ;
             return jsonarray ;
@@ -49,5 +50,9 @@ public class SimpleReceiver {
             e.printStackTrace();
         }
         return new JsonArray();
+    }
+
+    public static String check4py4j(){
+        return "wassabi" ;
     }
 }
